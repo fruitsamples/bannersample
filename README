@@ -24,20 +24,20 @@ Use:
 		sudo pico /etc/authorization
 		
 	then look for "system.login.console". A few lines below this key, you
-	can add the line:
+	can add the line right above the smartcard-sniffer:
 	
-		<key>mechanisms</key>
-		<array>
-				<string>builtin:auto-login,privileged</string>
-+				<string>bannersample:test</string>
-				<string>loginwindow_builtin:login</string>
-				...
+                        <key>mechanisms</key>
+                        <array>
++                               <string>bannersample:test</string>
+                                <string>builtin:smartcard-sniffer,privileged</string>
+                                <string>loginwindow:login</string>
+								...
 				
 	The new line is marked with a "+" (don't include the "+" sign in the
 	file, though).
 
 5.	If you have fast user switching enabled, you can quickly see the results
-	by selecting a different user from the user menu.
+	by selecting "Login window" from the user menu.
 	
 	
 Note: The window will be movable if compiled in DEBUG mode. If you

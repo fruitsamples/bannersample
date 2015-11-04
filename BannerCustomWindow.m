@@ -9,6 +9,7 @@ Description: 	This is the implementation file for the BannerCustomWindow class, 
 */
 
 #import "BannerCustomWindow.h"
+#import "BannerController.h"
 #import <AppKit/AppKit.h>
 
 // alignments
@@ -35,6 +36,8 @@ Description: 	This is the implementation file for the BannerCustomWindow class, 
     [result setOpaque:NO];
     //and while we're at it, make sure the window has a shadow, which will automatically be the shape of our custom content.
     [result setHasShadow: YES];
+	// we want to appear before login
+	[BannerController enableCanBecomeVisibleWithoutLogin:result];
 
 	[self centerOurWindow];
 	return result;
@@ -109,7 +112,7 @@ Description: 	This is the implementation file for the BannerCustomWindow class, 
 
 
 /*
- IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc. ("Apple") in
+ IMPORTANT:  This Apple software is supplied to you by Apple Inc. ("Apple") in
  consideration of your agreement to the following terms, and your use, installation,
  modification or redistribution of this Apple software constitutes acceptance of these
  terms.  If you do not agree with these terms, please do not use, install, modify or
@@ -122,7 +125,7 @@ Description: 	This is the implementation file for the BannerCustomWindow class, 
  forms; provided that if you redistribute the Apple Software in its entirety and without
  modifications, you must retain this notice and the following text and disclaimers in all
  such redistributions of the Apple Software.  Neither the name, trademarks, service marks
- or logos of Apple Computer, Inc. may be used to endorse or promote products derived from
+ or logos of Apple Inc. may be used to endorse or promote products derived from
  the Apple Software without specific prior written permission from Apple. Except as expressly
  stated in this notice, no other rights or licenses, express or implied, are granted by Apple
  herein, including but not limited to any patent rights that may be infringed by your
